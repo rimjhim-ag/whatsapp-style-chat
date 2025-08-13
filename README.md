@@ -147,7 +147,7 @@ npm run dev
 ## 🧑‍💻 Author
 
 **Rimjhim Agrawal**
-💼 [LinkedIn](https://linkedin.com/in/your-profile)
-📂 [Portfolio](https://your-portfolio-link.com)
+💼 [LinkedIn](https://www.linkedin.com/in/rimjhim-agrawal23000/)
+📂 [Portfolio](https://portfolio-rimjhim.vercel.app/)
 
 
