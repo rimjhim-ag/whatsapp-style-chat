@@ -81,16 +81,21 @@ export default function ChatWindow({
         </div>
       </div>
 
-      <div className="messages" ref={scrollerRef}>
-        {loading && <div className="loading">Loading messages…</div>}
-        {messages.map((m) => (
-          <MessageBubble
-            key={m.id || m._id || Math.random()}
-            msg={m}
-            isOnline={chatUser?.online}
-          />
-        ))}
-      </div>
+   <div className="messages" ref={scrollerRef}>
+  {loading ? (
+    <div className="loading">Loading messages…</div>
+  ) : (
+    messages.map((m) => (
+      <MessageBubble
+        key={m.id || m._id || Math.random()}
+        msg={m}
+        isOnline={chatUser?.online}
+      />
+    ))
+  )}
+</div>
+
+
 
       <MessageInput wa_id={wa_id} onNewMessage={handleNewMessage} />
     </div>
