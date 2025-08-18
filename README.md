@@ -109,10 +109,79 @@ cd frontend
 npm install
 ```
 
-**Create `.env` file in `frontend/`**:
+
+
+**Create `.env` file in `frontend/`** (⚠️ CRA requires the `REACT_APP_` prefix):
 
 ```
-VITE_API_URL=https://your-backend-url.vercel.app
+REACT_APP_API_URL=https://your-backend-url.vercel.app
+```
+
+**Usage in `src/api.js`:**
+
+```js
+const BASE_URL = process.env.REACT_APP_API_URL || "";
+```
+
+**Run locally**:
+
+```bash
+npm start
+```
+
+---
+
+## 🌍 Environment Setup (Optional)
+
+If you want **different URLs for development and production**, create these files inside `frontend/`:
+
+**.env.development**
+
+```
+REACT_APP_API_URL=http://localhost:5000
+```
+
+**.env.production**
+
+```
+REACT_APP_API_URL=https://your-backend-url.vercel.app
+```
+
+CRA will automatically pick the correct one when you run `npm start` or `npm run build`.
+
+---
+
+## 📡 Deployment
+
+* **Frontend**: Hosted on **Vercel**
+* **Backend**: Hosted on **Vercel** with `vercel.json`:
+
+```json
+{
+  "version": 2,
+  "builds": [
+    { "src": "src/index.js", "use": "@vercel/node" }
+  ],
+  "routes": [
+    { "src": "/(.*)", "dest": "src/index.js" }
+  ]
+}
+```
+
+---
+
+## 🧑‍💻 Author
+
+**Rimjhim Agrawal**
+💼 [LinkedIn](https://www.linkedin.com/in/rimjhim-agrawal23000/)
+
+```
+
+---
+
+👉 Do you want me to also add **screenshots/demo section** in this README (so it looks more polished when someone opens your repo)?
+```
+
 ```
 
 **Run locally**:
