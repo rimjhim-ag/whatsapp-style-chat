@@ -1,4 +1,4 @@
-const BASE_URL = "https://whatsapp-backend-rimjhim.vercel.app/api/messages"; // your backend base URL
+const BASE_URL = PROCESS.ENV.BACKEND_URL || " "; // your backend base URL
 
 // Fetch the list of chats (contacts with last message info)
 export async function fetchChats() {
